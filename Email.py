@@ -4,11 +4,12 @@ from email.mime.multipart import MIMEMultipart
 from email.mime.text import MIMEText
 from email.mime.base import MIMEBase
 from email import encoders
-
+import os from sys
 def Email():
     #you will need to turn on "Allow less secure apps" for this to work.
-    fromaddr = "clintonattendance@gmail.com"
-    toaddr = "clintonattendance@gmail.com"
+    
+    fromaddr = input("What is your email?")
+    toaddr = input("Who are you sending this to?")
  
     msg = MIMEMultipart()
  
@@ -32,9 +33,15 @@ def Email():
  
     server = smtplib.SMTP('smtp.gmail.com', 587)
     server.starttls()
-    server.login(fromaddr, "27Berkshire")#your email's password
+    server.login(fromaddr, #"your email's password")
     text = msg.as_string()
     server.sendmail(fromaddr, toaddr, text)
     server.quit()
-
 Email()
+try:
+                again = input("Would you like to email another person? Y or N")
+                 If again = "Y":
+                    Email()
+                 else:
+                    sys.exit(0)
+                 
