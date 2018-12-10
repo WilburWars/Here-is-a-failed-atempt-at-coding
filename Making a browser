@@ -1,0 +1,20 @@
+import webbrowser
+import time
+Youtube = "https://www.youtube.com/"
+
+global tab
+global LI
+global new_link
+tab = input("What website would you like to visit? Google, Youtube, or add?")
+if tab == "Google":
+    webbrowser.open_new('https://www.google.com/')
+if tab == "Youtube":
+    webbrowser.open_new(Youtube)
+if tab == "add":
+    LI = open("Website_Links", "w")
+    time.sleep(1)
+    new_link = input("Please insert the link to the website here.")
+    time.sleep(1)
+    LI.write(new_link)
+    
+    
