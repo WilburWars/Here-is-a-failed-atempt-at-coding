@@ -33,15 +33,16 @@ def Email():
  
     server = smtplib.SMTP('smtp.gmail.com', 587)
     server.starttls()
-    server.login(fromaddr, #"your email's password")
+    password = input("What is your password? Do not worry, this will never save.")
+    server.login(fromaddr, password)
     text = msg.as_string()
     server.sendmail(fromaddr, toaddr, text)
     server.quit()
-Email()
-try:
-                again = input("Would you like to email another person? Y or N")
-                 If again = "Y":
-                    Email()
-                 else:
-                    sys.exit(0)
+start = input("Hello! Would you like to send an email? Y or N")
+if start == "Y":
+                 Email()
+else:
+                 print("Ok! Hope to see you soon!")
+                 sys.exit(0)
+                
                  
