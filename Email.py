@@ -4,7 +4,7 @@ from email.mime.multipart import MIMEMultipart
 from email.mime.text import MIMEText
 from email.mime.base import MIMEBase
 from email import encoders
-import os from sys
+import sys import os
 def Email():
     #you will need to turn on "Allow less secure apps" for this to work.
     
