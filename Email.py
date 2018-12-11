@@ -20,17 +20,7 @@ def Email():
     body = input("What would your email body would like to be? Please type your answer.") 
  
     msg.attach(MIMEText(body, 'plain'))
- 
-    filename = "Timesheet.txt"
-    attachment = open("TimeSheet.txt", "rb")
- 
-    part = MIMEBase('application', 'octet-stream')
-    part.set_payload((attachment).read())
-    encoders.encode_base64(part)
-    part.add_header('Content-Disposition', "attachment; filename= %s" % filename)
- 
-    msg.attach(part)
- 
+    
     server = smtplib.SMTP('smtp.gmail.com', 587)
     server.starttls()
     password = input("What is your password? Do not worry, this will never save.")
